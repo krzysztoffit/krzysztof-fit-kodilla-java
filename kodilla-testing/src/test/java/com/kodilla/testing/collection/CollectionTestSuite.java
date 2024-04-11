@@ -31,6 +31,9 @@ public class CollectionTestSuite {
 
         // then
         Assertions.assertFalse(exterminated.isEmpty());
+        for (Integer number : exterminated) {
+            Assertions.assertTrue(number % 2 == 0);
+        }
     }
 
     @DisplayName("Exterminate odd numbers from the list and return new list " +
@@ -47,5 +50,9 @@ public class CollectionTestSuite {
 
         // then
         Assertions.assertFalse(exterminated.isEmpty());
+        for (Integer number : exterminated) {
+            Assertions.assertTrue(number % 2 == 0);
+        }
+
     }
 }

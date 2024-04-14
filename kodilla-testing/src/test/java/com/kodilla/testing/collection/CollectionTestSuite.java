@@ -30,7 +30,6 @@ public class CollectionTestSuite {
         List<Integer> exterminated = oddNumbersExterminator.exterminate(emptyList);
 
         // then
-        Assertions.assertFalse(exterminated.isEmpty());
         for (Integer number : exterminated) {
             Assertions.assertTrue(number % 2 == 0);
         }

@@ -46,7 +46,7 @@ public class ShapeCollectorTestSuite {
             // given
             ShapeCollector shapeCollector = new ShapeCollector();
             Shape figure = new Square();
-            shapeCollector.addFigure(figure);
+            shapeCollector.addFigure(new Square());
 
             // when
             boolean result = shapeCollector.removeFigure(figure);
@@ -66,22 +66,7 @@ public class ShapeCollectorTestSuite {
             Shape resultFigure = shapeCollector.getFigure(0);
 
             // then
-            Assertions.assertEquals(resultFigure, figure);
-        }
-
-        @Test
-        void testShowFigures() {
-            // given
-            ShapeCollector shapeCollector = new ShapeCollector();
-            Shape figure = new Square();
-            shapeCollector.addFigure(figure);
-            String figureString = figure.getShapeName();
-
-            // when
-            String resultString = shapeCollector.showFigures();
-
-            // then
-            Assertions.assertEquals(resultString, figureString);
+            Assertions.assertEquals(figure, resultFigure);
         }
     }
 
@@ -126,22 +111,7 @@ public class ShapeCollectorTestSuite {
             Shape resultFigure = shapeCollector.getFigure(0);
 
             // then
-            Assertions.assertEquals(resultFigure, figure);
-        }
-
-        @Test
-        void testShowFigures() {
-            // given
-            ShapeCollector shapeCollector = new ShapeCollector();
-            Shape figure = new Triangle();
-            shapeCollector.addFigure(figure);
-            String figureString = figure.getShapeName();
-
-            // when
-            String resultString = shapeCollector.showFigures();
-
-            // then
-            Assertions.assertEquals(resultString, figureString);
+            Assertions.assertEquals(figure, resultFigure);
         }
     }
 
@@ -186,22 +156,27 @@ public class ShapeCollectorTestSuite {
             Shape resultFigure = shapeCollector.getFigure(0);
 
             // then
-            Assertions.assertEquals(resultFigure, figure);
+            Assertions.assertEquals(figure, resultFigure);
         }
+    }
 
+    @Nested
+    @DisplayName("Test for Show Figures")
+    class TestForShowFigures {
         @Test
         void testShowFigures() {
             // given
             ShapeCollector shapeCollector = new ShapeCollector();
-            Shape figure = new Circle();
-            shapeCollector.addFigure(figure);
-            String figureString = figure.getShapeName();
+            shapeCollector.addFigure(new Circle());
+            shapeCollector.addFigure(new Square());
+            shapeCollector.addFigure(new Square());
+            shapeCollector.addFigure(new Circle());
 
             // when
             String resultString = shapeCollector.showFigures();
 
             // then
-            Assertions.assertEquals(resultString, figureString);
+            Assertions.assertEquals( "Circle,Square,Square,Circle", resultString);
         }
     }
 }

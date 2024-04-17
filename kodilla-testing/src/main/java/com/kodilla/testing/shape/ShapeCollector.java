@@ -12,10 +12,7 @@ public class ShapeCollector {
     }
 
     public boolean removeFigure(Shape shape) {
-        if (figures.contains(shape)) {
-            return figures.remove(shape);
-        }
-        return false;
+        return figures.remove(shape);
     }
 
     public Shape getFigure(int n) {
@@ -27,8 +24,12 @@ public class ShapeCollector {
 
     public String showFigures() {
         String result = "";
-        for (Shape figure : figures) {
+        for (int i = 0; i < figures.size(); i++) {
+            Shape figure = figures.get(i);
             result += figure.getShapeName();
+            if (i < figures.size() - 1) {
+                result += ",";
+            }
         }
         return result;
     }

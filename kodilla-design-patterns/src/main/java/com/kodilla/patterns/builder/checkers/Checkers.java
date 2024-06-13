@@ -78,7 +78,5 @@ public class Checkers {
             }
             return new Checkers(board, playerOne, playerTwo);
         }
-
-        ;
     }
 }

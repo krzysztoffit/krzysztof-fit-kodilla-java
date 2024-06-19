@@ -1,0 +1,18 @@
+INSERT INTO POSTS(ID, USER_ID, BODY)
+VALUES(11, 11, "I want to write something on this forum.");
+
+INSERT INTO POSTS(ID, USER_ID, BODY)
+VALUES(12, 12, "I want to write something to.");
+
+INSERT INTO POSTS(ID, USER_ID, BODY)
+VALUES(13, 13, "I want to read your posts.");
+
+UPDATE POSTS SET BODY = "To delete" WHERE ID = 11;
+UPDATE POSTS SET BODY = "To delete" WHERE ID = 12;
+UPDATE POSTS SET BODY = "To delete" WHERE ID = 13;
+
+DELETE FROM POSTS WHERE ID = 11;
+DELETE FROM POSTS WHERE ID = 12;
+DELETE FROM POSTS WHERE ID = 13;
+
+COMMIT;

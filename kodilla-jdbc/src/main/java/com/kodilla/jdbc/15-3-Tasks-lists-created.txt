@@ -1,0 +1,57 @@
+CREATE TABLE ISSUESLISTS
+(
+    ID SERIAL PRIMARY KEY,
+    NAME VARCHAR(250)
+);
+
+CREATE TABLE ISSUES
+(
+    ID SERIAL PRIMARY KEY,
+    ISSUESLIST_ID BIGINT UNSIGNED NOT NULL,
+    SUMMARY VARCHAR(250),
+    DESCRIPTION VARCHAR(1500),
+    USER_ID_ASSIGNEDTO BIGINT UNSIGNED NOT NULL,
+    FOREIGN KEY (ISSUESLIST_ID) REFERENCES  ISSUESLISTS(ID),
+    FOREIGN KEY (USER_ID_ASSIGNEDTO) REFERENCES USERS(ID)
+);
+
+
+INSERT INTO ISSUESLISTS(ID, NAME) VALUES (1, "ToDo");
+INSERT INTO ISSUESLISTS(ID, NAME) VALUES (2, "In progress");
+INSERT INTO ISSUESLISTS(ID, NAME) VALUES (1, "Done");
+
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (1, 1, "Opracowanie dokumentacji technicznej", "Stworzenie szczegółowej dokumentacji technicznej dla nowego produktu lub funkcjonalności.",  1);
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (2, 1, "Przeprowadzenie testów integracyjnych", "Wykonanie testów, aby sprawdzić prawidłowe działanie różnych komponentów systemu po ich zintegrowaniu.",  3);
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (3, 1, "Naprawienie zgłoszonych błędów", "Zidentyfikowanie, zdiagnozowanie i rozwiązanie zgłoszonych przez użytkowników błędów w oprogramowaniu.",  4);
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (4, 1, "Utworzenie nowych materiałów szkoleniowych", "Opracowanie prezentacji, filmów instruktażowych lub innych materiałów szkoleniowych dla użytkowników produktu.",  5);
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (5, 1, "Aktualizacja strony internetowej", "Dodanie nowych treści, zaktualizowanie istniejących informacji i poprawienie ogólnego wyglądu i funkcjonalności strony internetowej.",  6);
+
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (6, 2, "Opracowanie strategii marketingowej", "Stworzenie planu marketingowego w celu promowania produktu lub usługi i zwiększenia sprzedaży.",  7);
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (7, 2, "Prowadzenie kampanii reklamowej", "Zarządzanie kampanią reklamową w mediach społecznościowych, wyszukiwarkach lub innych kanałach.",  8);
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (8, 2, "Analiza danych sprzedażowych", "Zbieranie, analizowanie i interpretowanie danych dotyczących sprzedaży w celu identyfikacji trendów i podejmowania lepszych decyzji biznesowych.",  9);
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (9, 2, "Przygotowanie raportów finansowych", "Tworzenie miesięcznych, kwartalnych lub rocznych raportów finansowych dla kierownictwa lub inwestorów.",  10);
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (10, 2, "Negocjowanie umów z dostawcami", "Negocjowanie warunków umów z dostawcami w celu uzyskania najlepszych cen i warunków dla firmy.",  11);
+
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (11, 3, "Planowanie nowego projektu", "Określenie celów projektu, zakresu, harmonogramu, budżetu i zasobów potrzebnych do jego realizacji.",  12);
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (12, 3, "Zarządzanie zespołem projektowym", "Delegowanie zadań, monitorowanie postępów, motywowanie członków zespołu i rozwiązywanie problemów w celu zapewnienia pomyślnej realizacji projektu.",  13);
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (13, 3, "Prowadzenie spotkań projektowych", "Organizowanie i prowadzenie spotkań projektowych w celu informowania zespołu o postępach, omawiania problemów i podejmowania decyzji.",  14);
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (14, 3, "Monitorowanie ryzyka projektu", "Identyfikowanie potencjalnych zagrożeń dla projektu, opracowywanie planów łagodzenia ryzyka i monitorowanie ich realizacji.",  15);
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (15, 3, "Dokumentowanie procesu projektowego", "Udokumentowanie etapów projektu, decyzji, problemów i rozwiązań w celu ułatwienia przyszłych projektów.",  16);
+
+COMMIT;
+

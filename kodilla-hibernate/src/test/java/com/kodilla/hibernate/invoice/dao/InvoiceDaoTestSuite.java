@@ -11,7 +11,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-public class InvoiceDaoTestSuie {
+public class InvoiceDaoTestSuite {
 
     @Autowired
     private InvoiceDao invoiceDao;
@@ -49,6 +49,6 @@ public class InvoiceDaoTestSuie {
         assertNotEquals(0, id);
 
         // cleanUp
-//        invoiceDao.deleteById(id);
+        invoiceDao.deleteById(id);
     }
 }

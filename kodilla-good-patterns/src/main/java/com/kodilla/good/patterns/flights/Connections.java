@@ -5,8 +5,6 @@ import java.util.List;
 
 public class Connections {
 
-    private List<Flight> flightList;
-
     public List<Flight> getFlightList() {
         List<Flight> flights = new ArrayList<>();
         flights.add(new Flight("Warszawa", "Gdańsk"));
@@ -21,6 +19,12 @@ public class Connections {
         flights.add(new Flight("Szymany", "Warszawa"));
         flights.add(new Flight("Szymany", "Gdańsk"));
         flights.add(new Flight("Poznań", "Gdańsk"));
+        flights.add(new Flight("Szymany", "Wrocław"));
+        flights.add(new Flight("Poznań", "Wrocław"));
+        flights.add(new Flight("Gdańsk", "Szczecin"));
+        flights.add(new Flight("Gdańsk", "Bydgoszcz"));
+        flights.add(new Flight("Rzeszów", "Wrocław"));
+        flights.add(new Flight("Łódź", "Wrocław"));
 
         return flights;
     }

@@ -10,8 +10,14 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.springframework:spring-core:7.0.0-M8'
+    implementation 'org.springframework.boot:spring-boot:3.5.4'
+    implementation 'org.springframework.boot:spring-boot-starter:3.5.4'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.5.4'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-engine:1.12.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.12.2'
     testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
 test {
